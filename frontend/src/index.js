@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import {
-  BrowserRouter
-} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+
+
+/* Need to implement Login Feature by getting user to login first before adding or removing tasks */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

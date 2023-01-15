@@ -17,12 +17,12 @@
     justify-content: center;
     padding: 10px;
     margin: auto;
-    border-bottom: 1px solid #e4dcdc;
+    border-bottom: 1px solid rgb(196, 196, 196);
 }
 
 .nav-bar h1 {
     color: white;
-    background-color: rgb(0, 153, 255);
+    background-color: rgb(74, 183, 255);
     border-radius: 50%;
     border: 1px solid rgb(0, 153, 255);
     padding: 6px;
@@ -58,7 +58,8 @@
 }
 /* Nav Bar Area End */
 
-.toDoList-topics {
+/* item components Start*/
+.item-container {
     display: grid;
     justify-content: center;
     width: 80%;
@@ -66,37 +67,157 @@
     margin-top: 1em;
 }
 
-.task-container {
-    display: flex;
+.item-title {
+    border: 0px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    border-bottom: 1px solid #e4dcdc;
+    width: 18em;
+    resize: none;
+    margin-right: 1em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    position: relative;
+}
+
+.item-title:after {
+    content: " ⮟";
+    color: #e4dcdc;
+    position: absolute;
+    left: 95%;
+}
+
+.item-text {
+    font-size: 1.2em;
+    margin-right: 0.6em;
+}
+
+.item-description {
+    margin-top: 1.4em;
+    width: 100%;
+    height: 8em;
+    resize: none;
+    padding: 1em;
     border: 1px solid #e4dcdc;
+}
+
+.item-description.collapse {
+    display: none;
+}
+
+/* Item components End*/
+
+/*Goals Page Start */
+.goal-content {
+    display: flex;
+    border: 1px solid rgb(196, 196, 196);
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 1em;
     margin-bottom: 1em;
     position: relative;
-    width: 64em;
-}
-
-.task-flex-one {
-    display: flex;
-    width: 50%;
-}
-
-.task-title {
-    border: 0px;
-    text-align: center;
-    display: inline-block;
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
+    width: 57em;
     margin-top: 0.5em;
-    border-bottom: 1px solid #e4dcdc;
-    width: 120%;
+    position: relative;
+}
+
+.goal-head {
+    display: flex;
+    position: relative;
+}
+
+.goal-ec-p {
+    position: absolute;
+    margin-left: 12em;
+}
+
+/* To Do List Page Start*/
+
+.toDoList-head {
+    display: grid;
+    grid-template-columns: 20em 38em;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.all-goal-topics-container {
+    position: relative;
+}
+
+.goal-topic-container {
+    border: 1px solid #e4dcdc;
+    padding: 1em;
+}
+
+.goal-topics {
+    margin-top: 1em;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+    width: 24em;
+    border: 1px solid #e4dcdc;
+    height: 18.8em;
+    margin-left: -1.2em;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.goal-topics.display {
+    display: none;
+}
+
+.toDoList-sort-options {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.sort-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort-radio label{
+    cursor: pointer;
+}
+
+.sort-radio-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 100%;
+    border: 1px solid rgb(196, 196, 196);
+    position: relative;
+    font-size: 5em;
+    height: 0.35em;
+    width: 0.35em;
+    cursor: pointer;
+}
+
+.sort-radio-button:checked {
+    background-color: rgb(74, 183, 255);
+}
+
+.task-container {
+    display: flex;
+    border: 1px solid rgb(196, 196, 196);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+    margin-bottom: 1em;
+    position: relative;
 }
 
 .expand-collapse-task {
-    position: absolute;
-    left: 94%;
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -123,96 +244,66 @@
     cursor: pointer;
 }
 
-.task-select {
+.task-display {
     margin-top: 0.5em;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-.task-deadline {
+.task-info {
     display: flex;
     align-items: center;
-    margin-right: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
-.task-deadline p{
-    margin-right: 0.4em;
-    font-size: 1.2em;
-}
-
-.task-deadline input {
-    font-size: 1.2em;
-    width: 8.3em;
-    padding-left: 0.4em;
-}
-
-.task-dates{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.task-dates p {
-    margin-right: 0.4em;
-    font-size: 1.2em;
-}
-
-.task-dates input {
-    width: 8.3em;
+.task-calendar {
     font-size: 1.2em;
     padding-left: 0.4em;
-    margin-right: 0.4em;
-
+    width: 8.25em;
+    margin-right: 0.6em;
 }
 
-.task-repeat-select {
+.task-options {
     background-color: white;
     border: 1px solid rgb(147, 147, 147);
-}
-
-.task-repeat-select {
-    font-size: 1.25em;
-    padding-left: 0.6em;
-}
-
-
-.task-importance {
-    display: flex;
-    align-items: center;
-    margin-left: 1.5em;
-}
-
-.task-importance p{
-    margin-right: 0.4em;
     font-size: 1.2em;
-}
-
-.task-importance-select {
-    background-color: white;
-    font-size: 1.2em;
-    border: 1px solid rgb(147, 147, 147);
     padding-left: 0.4em;
     padding-right: 0.4em;
+    margin-right: 0.6em;
 }
 
-.task-select.collapse {
-    display:none
-}
-
-.task-description.collapse {
-    display: none;
+.task-time {
+    background-color: white;
+    border: 1px solid rgb(147, 147, 147);
+    font-size: 1.2em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    width: 7em;
+    margin-right: 0.6em;
 }
 
 .select-disable {
     display: none;
 }
 
-.task-description {
-    margin-top: 1.4em;
-    width: 100%;
-    height: 8em;
-    resize: none;
+.schedule {
+    display: flex;
+    align-items: center;
+    margin-top: 0.8em;
     padding: 1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.schedule-sections {
+    display: flex;
+}
+
+.schedule.collapse {
+    display:none
 }
 
 .remove-task {
@@ -261,11 +352,4 @@
     cursor: pointer;
 }
 
-
-/* 
-    color: #e4dcdc;
-    border: 1px solid #e4dcdc;
-    border-radius: 100%;
-    width: 1em;
-    height: 1em;
-*/
+/* To-do-List Page End*/

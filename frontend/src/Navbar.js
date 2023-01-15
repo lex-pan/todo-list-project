@@ -6,9 +6,9 @@ export default function Navbar() {
     <nav className='nav-bar'>
       <h1>Mylist</h1>
       <ul className='sections'>
-        <li><Link to='/goals'>Goals</Link></li>
-        <li><Link to='/'>To-Do</Link></li>
-        <li><Link to='/calendar'>Calendar</Link></li>
+        <Link to='/goals'><li>Goals</li></Link>
+        <Link to='/'><li>To-Do</li></Link>
+        <Link to='/calendar'><li>Calendar</li></Link>
       </ul>
     </nav>
   )
